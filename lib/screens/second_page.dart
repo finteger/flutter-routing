@@ -8,11 +8,21 @@ class SecondPage extends StatefulWidget {
 }
 
 class _SecondPageState extends State<SecondPage> {
+  final data = "Hello, World!";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Page"),
+        title: const Text("Second Page"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: (){
+            Navigator.pop(context, data);
+          },
+          child: const Text('Send data'),
+        ),
       ),
     );
   }
